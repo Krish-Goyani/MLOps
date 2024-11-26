@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-from src.logger.logging import logging
-from src.exception.exception import customexception
+from logger import logging
+from exception.exception import CustomException
 import os
 import sys
 from dataclasses import dataclass
@@ -10,8 +10,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OrdinalEncoder,StandardScaler
-
-from src.utils.utils import save_object
+from utils.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
@@ -67,7 +66,7 @@ class DataTransformation:
         except Exception as e:
             logging.info("Exception occured in the initiate_datatransformation")
 
-            raise customexception(e,sys)
+            raise CustomException(e,sys)
             
     
     def initialize_data_transformation(self,train_path,test_path):
@@ -115,5 +114,5 @@ class DataTransformation:
         except Exception as e:
             logging.info("Exception occured in the initiate_datatransformation")
 
-            raise customexception(e,sys)
+            raise CustomException(e,sys)
             

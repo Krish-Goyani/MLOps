@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from logger.logging import logging
+from logger import logging
 from exception.exception import CustomException
 import os
 import sys
@@ -50,7 +50,7 @@ class DataIngestion:
 
         except Exception as e:
             logging.info()
-            raise customexception(e,sys)
+            raise CustomException(e,sys)
 
 
 if __name__=="__main__":
