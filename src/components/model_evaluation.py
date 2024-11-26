@@ -23,7 +23,7 @@ class ModelEvaluation:
 
     def initiate_model_evaluation(self,train_array,test_array):
         try:
-             X_test,y_test=(train_array[:,:-1], test_array[:,-1])
+             X_test,y_test=(test_array[:,:-1], test_array[:,-1])
 
              model_path=os.path.join("artifacts","model.pkl")
              model=load_object(model_path)
